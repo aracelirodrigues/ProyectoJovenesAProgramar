@@ -39,3 +39,6 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+
+document.getElementById("registro").innerHTML = localStorage.getItem("email")
