@@ -1,32 +1,32 @@
-let jaimito = localStorage.getItem("catID") 
-let url = `https://japceibal.github.io/emercado-api/cats_products/${jaimito}.json`
+let jaimito = localStorage.getItem("catID") ;
+let url = `https://japceibal.github.io/emercado-api/cats_products/${jaimito}.json` ;
 
 let arregloProductos = [] ;
 
-const ORDER_ASC_BY_COST = "MENORMAYOR";
-const ORDER_DESC_BY_COST = "MAYORMENOR";
-const ORDER_BY_SOLD_COUNT = "Cant.";
-let currentCategoriesArray = [];
+const ORDER_ASC_COST = "MENORMAYOR";
+const ORDER_DESC_COST = "MAYORMENOR";
+const ORDER_SOLD_COUNT = "Cant.";
+let currentProductArray = [];
 let currentSortCriteria = undefined;
 let precioMin = undefined;
 let precioMax = undefined;
 
 function sortCategories(criteria, array){
     let result = [];
-    if (criteria === ORDER_ASC_BY_COST)
+    if (criteria === ORDER_ASC_COST)
     {
         result = array.sort(function(a, b) {
             if ( a.cost < b.cost ){ return -1; }
             if ( a.cost > b.cost ){ return 1; }
             return 0;
         });
-    }else if (criteria === ORDER_DESC_BY_COST){
+    }else if (criteria === ORDER_DESC_COST){
         result = array.sort(function(a, b) {
             if ( a.cost > b.cost ){ return -1; }
             if ( a.cost < b.cost ){ return 1; }
             return 0;
         });
-    }else if (criteria === ORDER_BY_SOLD_COUNT){
+    }else if (criteria === ORDER_SOLD_COUNT){
         result = array.sort(function(a, b) {
             let aCount = parseInt(a.soldCount);
             let bCount = parseInt(b.soldCount);
@@ -36,21 +36,21 @@ function sortCategories(criteria, array){
             return 0;
         });
     }
-
     return result;
 }
 
 function sortAndShowCategories(sortCriteria, arregloProductos2){
+    
     currentSortCriteria = sortCriteria;
 
     if(arregloProductos2 != undefined){
-        currentCategoriesArray = arregloProductos2;
+        currentProductArray = arregloProductos2;
     }
 
-    currentProductosArray = sortCategories(currentSortCriteria, arregloProductos);
+    currentProductArray = sortCategories(currentSortCriteria, arregloProductos);
 
     //Muestro las categorías ordenadas
-    showProductosList(currentProductosArray);
+    showProductosList(currentProductArray);
 }
 
 
@@ -64,7 +64,7 @@ function showProductosList(array){
             ((precioMax == undefined) || (precioMax != undefined && parseInt(productos.cost) <= precioMax))){ 
 
         htmlContentToAppend +=  `  
-        <div class="list-group-item list-group-item-action cursor-active">
+        <div onclick = "productosID(${productos.id})" class="list-group-item list-group-item-action cursor-active">
             <div class="row-3 d-flex"> 
             <div class="col-3">
             <img src="${productos.image} "alt="${productos.description} "class="img-thumbnail">
@@ -94,18 +94,18 @@ function showProductosList(array){
     arregloProductos = autitos.products;
 
     showProductosList(autitos.products);
-    let cat = autitos.catName 
+    let cat = autitos.catName;
     document.getElementById("categoria").innerHTML = cat; 
     document.getElementById("sortAsc").addEventListener("click", function(){
-        sortAndShowCategories(ORDER_ASC_BY_COST);
+        sortAndShowCategories(ORDER_ASC_COST);
     });
     
     document.getElementById("sortDesc").addEventListener("click", function(){
-        sortAndShowCategories(ORDER_DESC_BY_COST);
+        sortAndShowCategories(ORDER_DESC_COST);
     });
     
     document.getElementById("sortByCount").addEventListener("click", function(){
-        sortAndShowCategories(ORDER_BY_SOLD_COUNT);
+        sortAndShowCategories(ORDER_SOLD_COUNT);
     });
     
     document.getElementById("clearRangeFilter").addEventListener("click", function(){
@@ -136,7 +136,12 @@ function showProductosList(array){
         else{
             precioMax = undefined;
         }
-    
+
         showProductosList(arregloProductos);
-    });
+    });    
 });
+
+function productosID (id) {
+    localStorage.setItem("productosID", id);
+    window.location.href = "product-info.html"
+};

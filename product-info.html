@@ -37,12 +37,40 @@
       </div>
     </div>
   </nav>
-  <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+  <main class="pb-5">
+    <div class="text-center p-4">
+    <h2> Producto </h2>
+    <p class="lead"> </p>
     </div>
+    <div class="container">
+      <div class="row">
+      <div class="text-left pb-2 pt-4">
+      <h2 id="nombreProducto" style="color:rgb(185, 14, 14)"></h2>
+      </div>
+      <hr>
+      <div class="pb-2" id="detalleProducto" >
+      </div>
+      <hr>
+      <h4 class="text-start"> Comentarios </h4>
+      <ul class="list-group" id="comentarios"> 
+      <p id="subirComent"></p>
+      </ul>
+      <div class="row g-2">
+        <h4 class="text-start"> Comentar </h4>
+            <form action=" ">
+              <p class="text-start"> Tu Opinión: </p>          
+              <textarea></textarea>
+              <p class="text-start">Tu Puntuación: </p>
+              <p><select name="Puntuación"></p>
+                <option class="fa fa-star">1</option>
+                <option class="fa fa-star">2</option>
+                <option class="fa fa-star">3</option>
+                <option class="fa fa-star">4</option>
+                <option class="fa fa-star">5</option>     
+                </select></p>
+             <p><input type="submit" class="btn btn-primary" id="boton"></p>
+            </form>
+      </div>
   </main>
   <footer class="text-muted">
     <div class="container">
