@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let detalleP = await datos.json();
     result = detalleP;
 
-        const {category, cost, currency, description, images, name, soldCount} = result
+        const {category, cost, currency, description, images, name, soldCount, relatedProducts} = result
         document.getElementById("nombreProducto").innerHTML = name
 
         document.getElementById("detalleProducto").innerHTML = `
@@ -28,9 +28,18 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('imagenesProducto').innerHTML += ` 
             <div class="card gx-4" style="width: 25%;">
                 <img src="${images[i]}" class="card-img img-thumbnail" alt="...">
-            </div>`
+            </div> `
         };
-
+        for (pRelacionados of relatedProducts) { 
+            const {id, name, image} = pRelacionados 
+        
+                document.getElementById("pRelacionados").innerHTML += `
+                <div onclick="productosID(${id})" 
+                class="card m-3 list-group-item list-group-item-action cursor-active mx-auto" style="width:35%">
+                <img src="${image}" class="card-img-top" alt="....">
+                <p class="card-text">${name}</p>
+                </div> `
+        }; 
         let comen= {};
         let coment = await fetch(comentarios);
         let detalleC = await coment.json();
@@ -39,8 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     for (data of comen) {
       const { dateTime, description, user, score } = data 
        listarComentarios ( user, dateTime, description, score )
-         }}
-         );
+         }});
 
     function listarComentarios(user, dateTime, description, score){
 
@@ -60,8 +68,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <span class="fa fa-star checked" style="color: red"></span>
                 `} else {
                 document.getElementById(user).innerHTML +=`
-                <span class="fa fa-star"></span>
-                `} }
+                <span class="fa fa-star"></span> `
+            }}
         };
 
-
+        function productosID (id) {
+            localStorage.setItem("productosID", id);
+            window.location.href = "product-info.html"
+        };
+        
