@@ -7,8 +7,8 @@ entrar.addEventListener("submit", check);
         localStorage.setItem("email", usuario.value);
         if(email.value == "" || contraseña.value == ""){
             e.prevenDefault()
-        }
+        };
         return 
-    }
+    };
 
   
