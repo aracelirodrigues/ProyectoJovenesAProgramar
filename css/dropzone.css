@@ -424,6 +424,7 @@ margin-bottom: 10px;}
         border-right: 6px solid transparent;
         border-bottom: 6px solid #be2626; }
 
-#file-upload .dz-preview.dz-error .dz-error-message, #file-upload .dz-preview.dz-error .dz-error-mark{
+#file-upload .dz-preview.dz-error .dz-error-message,
+ #file-upload .dz-preview.dz-error .dz-error-mark{
   display: none;
 }
