@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>eMercado - Todo lo que busques está aquí</title>
+  <title> eMercado - Todo lo que busques está aquí </title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -21,13 +21,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="index.html"> Inicio </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
+            <a class="nav-link" href="categories.html"> Categorías </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
+            <a class="nav-link" href="sell.html"> Vender </a>
           </li>
           <li class="nav-item">
             <div class="dropdown">
@@ -50,23 +50,23 @@
     </div>
   </nav>
   <main>
-    <div class="alert alert-success alert-dismissible fade" role="alert" id="compraExitosa">
-      <strong class="text-start fst-italic">Has Finalizado Tu Compra Con Exito!!!</strong>
+    <div class="alert alert-success alert-dismissible fade text-center" role="alert" id="compraExitosa">
+      <strong class="text-start fst-italic"> Has Finalizado Tu Compra Con Éxito!!! </strong>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     <div class="container">
-      <h1 class="mt-5 mb-4 fst-italic">Carrito de Compras</h1>
+      <h1 class="mt-5 mb-4 text-center fst-italic"> Carrito de Compras </h1>
       <div class="row">
         <div class="col">
-          <h5 class="pb-4 text-start fst-italic">Artículo a Comprar</h5>
+          <h5 class="pb-4 text-start fst-italic"> Artículo a Comprar </h5>
           <table class="table fst-italic">
             <thead>
               <tr>
                 <th scope="col"></th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Costo</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Subtotal</th>
+                <th scope="col"> Nombre </th>
+                <th scope="col"> Costo </th>
+                <th scope="col"> Cantidad </th>
+                <th scope="col"> Subtotal </th>
               </tr>
             </thead>
             <tbody class="table-group-divider" id="carrito">
@@ -78,11 +78,11 @@
     </div>
     <div class="container">
       <form action="#" method="get" class="row mt-4 needs-validation" novalidate>
-        <h4 class="mt-5 mb-4 text-start fst-italic">Tipo de Envío</h4>
+        <h4 class="mt-5 mb-4 text-start fst-italic"> Tipo de Envío </h4>
         <div class="col-sm-10">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="gridRadios" value="0.15" onclick="calcularTotal()"
-              checked required>
+              required>
             <label class="form-check-label" for="gridRadios1">
               Premium 2 a 5 días (15%)
             </label>
@@ -100,45 +100,44 @@
             </label>
           </div>
         </div>
-        <h4 class="mt-5 mb-4 text-start fst-italic">Dirección de Envío</h4>
+        <h4 class="mt-5 mb-4 text-start fst-italic"> Dirección de Envío </h4>
         <div class="col-md-6">
-          <label class="form-label">Calle:</label>
+          <label class="form-label"> Calle: </label>
           <input type="text" class="form-control" required>
         </div>
         <div class="col-md-4">
-          <label class="form-label">Número:</label>
+          <label class="form-label"> Número: </label>
           <input type="number" class="form-control" required>
         </div>
-        <div class="col-md-6">
-          <label class="form-label">Esquina:</label>
+        <div class="col-md-6 mb-4">
+          <label class="form-label"> Esquina: </label>
           <input type="text" class="form-control" required>
         </div>
-        <p> </p>
         <hr>
         <hr class="mb-4">
-        <h4 class="mb-3">Costos</h4>
+        <h4 class="mb-3"> Costos </h4>
         <ul class="list-group mb-3">
           <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
-              <h6 class="ms-0">Sub Total</h6>
-              <small class="text-muted">Costo unitario del producto por unidad </small>
+              <h6 class="ms-0"> Sub Total </h6>
+              <small class="text-muted"> Costo Unitario del Producto por Unidad </small>
             </div>
             <span class="text-muted" id="subTotalGeneral">-</span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
-              <h6 class="ms-0">Costo de Envio</h6>
-              <small class="text-muted">Según el Tipo de envio</small>
+              <h6 class="ms-0"> Costo de Envio </h6>
+              <small class="text-muted"> Según el Tipo de Envío </small>
             </div>
             <span class="text-muted" id="costoEnvio">-</span>
           </li>
           <li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
+            <span> Total (USD) </span>
             <strong id="total">-</strong>
           </li>
         </ul>
         <div>
-          <h4 class="mt-5 mb-4 text-start fst-italic">Forma de Pago</h4>
+          <h4 class="mt-5 mb-4 text-start fst-italic"> Forma de Pago </h4>
 
           <p id="pagoNoSelecionado" class="text-start fst-italic">
             No Ha Seleccionado Forma de Pago.
@@ -164,18 +163,18 @@
                     <input class="form-check-input" type="radio" id="tarj" onclick="modal()" name="tarjeta"
                       value="option1" required>
                     <label class="form-check-label text-muted" for="tarjetaCredito">
-                      Tarjeta de Credito
+                      Tarjeta de Crédito
                     </label>
                   </div>
                   <hr>
                   <div class="col-4 ">
-                    <label class="col-form-label-sm text-muted d-flex">Número de tarjeta:</label>
+                    <label class="col-form-label-sm text-muted d-flex"> Número de Tarjeta: </label>
                     <input type="number" class="form-control d-flex" id="1" disabled required>
-                    <label class="col-form-label-sm text-muted d-flex">Código de seg:</label>
+                    <label class="col-form-label-sm text-muted d-flex"> Código de Seg: </label>
                     <input type="number" class="form-control d-flex" id="2" disabled required>
                   </div>
                   <div class="col-4 mb-4">
-                    <label class="form-label text-muted">Vencimiento(MM/AA):</label>
+                    <label class="form-label text-muted"> Vencimiento(MM/AA): </label>
                     <input type="month" class="form-control text-muted" id="3" disabled required>
                   </div>
                   <div class="form-check">
@@ -187,7 +186,7 @@
                   </div>
                   <hr>
                   <div class="col-md-4">
-                    <label class="form-label text-muted">Número de Cuenta:</label>
+                    <label class="form-label text-muted"> Número de Cuenta: </label>
                     <input type="number" class="form-control" id="4" disabled required>
                   </div>
                 </div>
@@ -198,18 +197,19 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary col-7 mt-5">Finalizar Compra</button>
+        <button type="submit" class="btn btn-primary col-7 mt-5"> Finalizar Compra </button>
       </form>
     </div>
   </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
-        <a href="#">Volver arriba</a>
+        <a href="#"> Volver arriba </a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
+      <p> Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank"> Jovenes a Programar
+        </a> -
         2022</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      <p> Clickea <a target="_blank" href="Letra.pdf"> aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
   <div id="spinner-wrapper">

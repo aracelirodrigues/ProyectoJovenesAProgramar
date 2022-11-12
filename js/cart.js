@@ -22,7 +22,8 @@ function mostrar() {
         class="col-8 col-md-2 cantidad" oninput="calcularSubTotal()"></td>
         <td>${currency} <p id="subTotal">${unitCost} </p></td>
         </tr>`
-    }};
+    }
+};
 
 function calcularSubTotal() {
     let costo = document.querySelector("p.costo").innerHTML
@@ -43,18 +44,19 @@ function productosID(id) {
 
 function calcularTotal() {
     let subtotal = document.getElementById("subTotalGeneral")
-    let totalsub = parseFloat(document.getElementById("subTotal").textContent)
+    let totalSub = parseFloat(document.getElementById("subTotal").textContent)
     let radios = document.getElementsByName("gridRadios")
     let costoE = document.getElementById("costoEnvio")
 
-    subtotal.innerHTML = parseFloat(totalsub)
+    subtotal.innerHTML = parseFloat(totalSub)
     for (let radio of radios) {
         if (radio.checked) {
-            let costoEnvio = parseFloat(radio.value) * totalsub;
+            let costoEnvio = parseFloat(radio.value) * totalSub;
             costoE.innerHTML = costoEnvio
-            document.getElementById("total").innerHTML = parseFloat(totalsub + costoEnvio);
+            document.getElementById("total").innerHTML = parseFloat(totalSub + costoEnvio);
         };
-    }};
+    }
+};
 
 function modal() {
     let tarjeta = document.getElementById("tarj")
@@ -107,7 +109,7 @@ function modal() {
             if (!form.checkValidity()) {
                 event.preventDefault()
                 event.stopPropagation()
-            }; if (form.checkValidity()) {
+            } else {
                 event.preventDefault()
                 event.stopPropagation()
                 compraExitosa()

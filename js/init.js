@@ -43,7 +43,7 @@ let getJSONData = function (url) {
 document.getElementById("registro").innerHTML = localStorage.getItem("email")
 
 document.getElementById("cerrarSesion").addEventListener("click", () => {
-  localStorage.removeItem("email");
+  localStorage.clear()
   window.location.replace("login.html")
 });
 

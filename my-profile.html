@@ -66,10 +66,51 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+
+
+      <hr>
+      <form class="row mt-4 needs-validation">
+        <div class="col">
+          <h1 class="mb-3 text-center fst-italic"  style="color:rgb(185, 14, 14)"> Mi Perfil </h1>
+          <hr class="my-4">
+          <div class="row g-3">
+
+            <div class="col-sm-6">
+              <label for="nombre" class="form-label"> Primer Nombre * </label>
+              <input type="text" class="form-control" id="nombre" required >
+            </div>
+
+            <div class="col-sm-6">
+              <label for="segundoNombre" class="form-label"> Segundo Nombre </label>
+              <input type="text" class="form-control"  id="segundoNombre">
+            </div>
+
+            <div class="col-sm-6">
+              <label for="apellido" class="form-label"> Primer Apellido * </label>
+              <input type="text" class="form-control" id="apellido" required>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="segundoApellido" class="form-label"> Segundo Apellido </label>
+              <input type="text" class="form-control" id="segundoApellido">
+            </div>
+
+            <div class="col-sm-6">
+              <label for="email" class="form-label"> Email </label>
+              <input type="email" class="form-control" id="email" disabled>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="teléfono" class="form-label"> Teléfono de Contacto * </label>
+              <input type="number" class="form-control" id="telContacto" required>
+            </div>
+            <hr>
+            <button id="botonGuardar" class="btn btn-danger" type="submit" onclick="guardarDatos()"> Guardar Cambios </button>
+          </div>
+        </div>
+      </form>
     </div>
+    <hr>
   </main>
   <footer class="text-muted">
     <div class="container">
